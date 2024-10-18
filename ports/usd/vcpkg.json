@@ -1,6 +1,6 @@
 {
   "name": "usd",
-  "version": "24.5",
+  "version": "24.8",
   "description": "Universal Scene Description (USD) is an efficient, scalable system for authoring, reading, and streaming time-sampled scene description for interchange between graphics applications.",
   "homepage": "https://github.com/PixarAnimationStudios/USD",
   "license": null,
@@ -27,5 +27,30 @@
       "host": true
     },
     "zlib"
-  ]
+  ],
+  "features": {
+    "monolithic": {
+      "description": "Build a monolithic USD library"
+    },
+    "imaging": {
+      "description": "Build USD imaging components like usdview and hydra support",
+      "dependencies": [
+        {
+          "name": "opensubdiv",
+          "features": ["opengl", "tbb"]
+        },
+        {
+          "name": "python3"
+        },
+        "boost-python"
+      ]
+    },
+    "commandline-tools": {
+      "description": "Build commandline tools like usdcat"
+    },
+    "embree-support": {
+      "description": "Enable Embree support",
+      "dependencies": ["embree3"]
+    }
+  }
 }
