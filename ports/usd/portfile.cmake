@@ -82,7 +82,7 @@ vcpkg_cmake_install()
 # The CMake files installation is not standard in USD and will install pxrConfig.cmake in the prefix root and
 # pxrTargets.cmake in "cmake" so we are moving pxrConfig.cmake in the same folder and patch the path to pxrTargets.cmake
 vcpkg_replace_string(${CURRENT_PACKAGES_DIR}/pxrConfig.cmake "/cmake/pxrTargets.cmake" "/pxrTargets.cmake")
-vcpkg_replace_string(${CURRENT_PACKAGES_DIR}/pxrConfig.cmake "${PXR_CMAKE_DIR}/include" "${VCPKG_IMPORT_PREFIX}/include")
+vcpkg_replace_string(${CURRENT_PACKAGES_DIR}/pxrConfig.cmake "PXR_CMAKE_DIR}/include" "VCPKG_IMPORT_PREFIX}/include")
 
 file(
     RENAME
