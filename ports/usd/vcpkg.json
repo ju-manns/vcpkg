@@ -48,9 +48,8 @@
     "commandline-tools": {
       "description": "Build commandline tools like usdcat"
     },
-    "embree-support": {
-      "description": "Enable Embree support",
-      "dependencies": ["embree3"]
+    "usdview": {
+      "description": "Build the usdview application"
     }
   }
 }
